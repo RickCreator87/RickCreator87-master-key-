@@ -1,0 +1,6 @@
+```txt
+fastapi
+uvicorn[standard]
+httpx
+python-jose[cryptography]  # or PyJWT, depending on what you used
+python-dotenv              # if you want .env support at runtime
