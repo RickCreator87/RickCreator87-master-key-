@@ -1,0 +1,36 @@
+`UNIVERSAL REPO STRUCTURE`
+# This is the structure  use for all languages:
+
+```
+master-ai-backend/
+│
+├── src/
+│   ├── server/
+│   │   ├── webhook-handler.(js|py|go|ts)
+│   │   ├── verify-signature.(js|py|go|ts)
+│   │   ├── router.(js|py|go|ts)
+│   │   └── github-client.(js|py|go|ts)
+│   │
+│   ├── ai/
+│   │   ├── model-router.(js|py|go|ts)
+│   │   ├── deepseek.(js|py|go|ts)
+│   │   ├── ollama.(js|py|go|ts)
+│   │   └── openai.(js|py|go|ts)
+│   │
+│   ├── logic/
+│   │   ├── pr-analysis.(js|py|go|ts)
+│   │   ├── repo-setup.(js|py|go|ts)
+│   │   ├── ci-advice.(js|py|go|ts)
+│   │   └── documentation.(js|py|go|ts)
+│   │
+│   ├── utils/
+│   │   ├── logger.(js|py|go|ts)
+│   │   ├── config.(js|py|go|ts)
+│   │   └── permissions.(js|py|go|ts)
+│
+├── tests/
+│
+├── .env.example
+├── README.md
+└── SECURITY.md
+```
