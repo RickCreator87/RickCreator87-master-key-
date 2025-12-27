@@ -1,0 +1,20 @@
+```
+function handleWebhook(request):
+    signature = request.headers["x-hub-signature-256"]
+    event = request.headers["x-github-event"]
+    payload = request.body
+
+    if not verifySignature(secret, payload, signature):
+        return 401
+
+    switch event:
+        case "pull_request":
+            return prAnalysis(payload)
+        case "push":
+            return repoAnalysis(payload)
+        case "workflow_run":
+            return ciAdvice(payload)
+        case "repository":
+            return repoSetup(payload)
+        case "installation":
+            return installationHandler(payload)
