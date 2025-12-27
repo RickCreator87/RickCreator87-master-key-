@@ -1,0 +1,71 @@
+Why Railway?  
+- Easy Docker support  
+- Exposes a public URL you can paste into your GitHub App webhook settings  
+
+4.1. Push your code
+
+Make sure all Python backend files + Dockerfile + workflow are committed:
+```
+`bash
+git add .
+git commit -m "Master AI backend Python: Docker + CI"
+git push origin main
+```
+
+4.2. On Railway
+
+1. Go to Railway, create a new project → Deploy from Repo  
+2. Select your backend repo  
+3. Railway detects the Dockerfile  
+4. Set environment variables in Railway’s Variables UI (matching your .env):
+```
+   - PORT=8000
+   - GITHUBAPPID=2498944
+   - GITHUBPRIVATEKEY_BASE64=...
+   - GITHUBWEBHOOKSECRET=...
+   - GITHUBCLIENTID=lv23il5SuXs68dmGM3jK
+   - GITHUBCLIENTSECRET=... (if you use OAuth)
+   - DEEPSEEKAPIKEY=...
+   - OPENAIAPIKEY=...
+   - OLLAMA_HOST=http://ollama:11434 (if you also deploy Ollama; otherwise your external host)
+```
+5. Deploy. Railway will give you a public URL like:
+```
+   `text
+   https://master-ai-backend-production.up.railway.app
+   `
+
+Your GitHub App Webhook URL should then be:
+
+`text
+https://master-ai-backend-production.up.railway.app/github/webhook
+`
+
+Paste that into:
+
+- GitHub → Settings → Developer settings → GitHub Apps → RickCreator87-master-key → General → Webhook URL
+
+Make sure the Secret in the App UI matches GITHUBWEBHOOKSECRET in Railway vars.
+```
+---
+
+5. Smoke-test checklist (to prove it’s alive)
+```
+Once deployed & wired:
+
+1. Check Railway logs  
+   - Confirm the app starts: “Uvicorn running on 0.0.0.0:8000” or similar.
+
+2. Trigger an event:
+   - Install the app on a test repo (if not already).  
+   - Open a new PR in that repo, or push a commit.
+
+3. Watch logs:
+   - You should see log lines from github_webhook handler:
+     - “Webhook received” with event type pull_request / push / etc.  
+   - If you see “invalid signature”, your secret doesn’t match.
+
+4. Check PR:
+   - If your pr_analysis.py is wired to actually comment, you should eventually see an AI comment appear on the PR.  
+   - If you haven’t set real AI keys yet, you can temporarily mock routetomodel to return a static string just to prove the path works.
+```
