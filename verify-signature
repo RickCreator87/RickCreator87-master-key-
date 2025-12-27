@@ -1,0 +1,6 @@
+Pseudocode:
+
+`
+function verifySignature(secret, payload, signatureHeader):
+    expected = "sha256=" + HMAC_SHA256(secret, payload)
+    return timingSafeCompare(expected, signatureHeader)
