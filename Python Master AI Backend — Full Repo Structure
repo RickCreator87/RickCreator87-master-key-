@@ -1,0 +1,40 @@
+🧠 Python Master AI Backend — Full Repo Structure
+
+``
+masteraibackend_python/
+│
+├── app/
+│   ├── main.py
+│   │
+│   ├── server/
+│   │   ├── webhook_handler.py
+│   │   ├── verify_signature.py
+│   │   ├── router.py
+│   │   └── github_client.py
+│   │
+│   ├── ai/
+│   │   ├── model_router.py
+│   │   ├── deepseek.py
+│   │   ├── ollama.py
+│   │   └── openai_client.py
+│   │
+│   ├── logic/
+│   │   ├── pr_analysis.py
+│   │   ├── repo_setup.py
+│   │   ├── ci_advice.py
+│   │   ├── documentation.py
+│   │   └── onboarding.py
+│   │
+│   ├── utils/
+│   │   ├── logger.py
+│   │   ├── config.py
+│   │   └── permissions.py
+│
+├── tests/
+│   ├── testwebhookhandler.py
+│   └── test_signature.py
+│
+├── .env.example
+├── requirements.txt
+├── README.md
+└── SECURITY.md
