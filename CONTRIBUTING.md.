@@ -1,0 +1,59 @@
+Save this file in project root as CONTRIBUTING.md.
+
+```markdown
+# Contributing to RickCreator87-master-key
+
+Thank you for your interest in contributing to this project! This document provides guidelines and steps for contributing.
+
+## How to Contribute
+
+### 1. Set Up Your Development Environment
+*   **Fork the repository** on GitHub.
+*   **Clone your fork** locally:
+    ```bash
+    git clone https://github.com/<your-username>/RickCreator87-master-key-.git
+    cd RickCreator87-master-key-
+    ```
+*   **Install dependencies**. Refer to the main `README.md` for specific setup instructions for the Python, Node.js, or Go components you'll be working on.
+*   **Create a new branch** for your work:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+### 2. Find an Issue or Propose a Change
+*   Check the **Issues** tab for tasks labeled `good-first-issue` or `help-wanted`.
+*   If you want to propose a new feature or report a bug, please open an issue first to discuss it.
+
+### 3. Make Your Changes
+*   Write clear, commented code.
+*   Follow the existing code style and structure in the project.
+*   If applicable, add or update tests for your changes.
+
+### 4. Test Your Changes
+*   Ensure existing tests pass.
+*   Run your new tests.
+*   Test the functionality manually if possible.
+
+### 5. Commit and Push
+*   Write clear, descriptive commit messages.
+*   Reference the issue number in your commit message if applicable (e.g., `Fixes #123`).
+*   Push your branch to your fork:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+### 6. Open a Pull Request (PR)
+*   Go to the original repository on GitHub.
+*   Click **"New Pull Request"** and select your branch.
+*   Fill out the PR template (if one exists). Provide a clear title and description of your changes, linking to any related issues.
+*   A project maintainer will review your PR and provide feedback.
+
+## Pull Request Guidelines
+*   **Keep it focused**: Each PR should address a single issue or add one feature.
+*   **Ensure it's complete**: The PR should be ready to merge without further work.
+*   **Documentation**: Update the relevant documentation (like `README.md` or code comments) if your change affects functionality.
+
+## Questions?
+If you have any questions, feel free to reach out by opening a discussion in the GitHub Issues section.
+
+Thank you for helping improve RickCreator87-master-key!
